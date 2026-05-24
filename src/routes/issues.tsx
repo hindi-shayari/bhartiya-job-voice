@@ -33,6 +33,5 @@ function IssuesPage() {
         </div>
       </section>
     </SiteLayout>
-  ),
-});
+  );
 }
