@@ -2,6 +2,8 @@
 @source "../src";
 @import "tw-animate-css";
 
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap");
+
 @custom-variant dark (&:is(.dark *));
 
 /*
@@ -63,38 +65,57 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  /* Parchment cream background #F4EBD7 */
+  --background: oklch(0.928 0.028 84);
+  /* Near black #1A1A1A */
+  --foreground: oklch(0.18 0 0);
+  /* Card #FFFDF5 */
+  --card: oklch(0.987 0.012 90);
+  --card-foreground: oklch(0.18 0 0);
+  --popover: oklch(0.987 0.012 90);
+  --popover-foreground: oklch(0.18 0 0);
+  /* Primary near-black */
+  --primary: oklch(0.18 0 0);
+  --primary-foreground: oklch(0.98 0 0);
+  /* Secondary muted parchment */
+  --secondary: oklch(0.9 0.03 84);
+  --secondary-foreground: oklch(0.18 0 0);
+  --muted: oklch(0.9 0.03 84);
+  --muted-foreground: oklch(0.42 0.02 60);
+  /* Accent: golden saffron #D4A017 */
+  --accent: oklch(0.74 0.15 80);
+  --accent-foreground: oklch(0.18 0 0);
+  /* Destructive: deep red #8B0000 */
+  --destructive: oklch(0.38 0.18 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  /* Border/divider #E0D5C0 */
+  --border: oklch(0.86 0.025 84);
+  --input: oklch(0.86 0.025 84);
+  --ring: oklch(0.74 0.15 80);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --sidebar: oklch(0.928 0.028 84);
+  --sidebar-foreground: oklch(0.18 0 0);
+  --sidebar-primary: oklch(0.18 0 0);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.74 0.15 80);
+  --sidebar-accent-foreground: oklch(0.18 0 0);
+  --sidebar-border: oklch(0.86 0.025 84);
+  --sidebar-ring: oklch(0.74 0.15 80);
+
+  --saffron: #D4A017;
+  --deep-red: #8B0000;
+  --cream: #F4EBD7;
+  --paper: #FFFDF5;
+  --rule: #E0D5C0;
+  --ink: #1A1A1A;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-hindi: "Noto Sans Devanagari", "Inter", sans-serif;
 }
 
 .dark {
@@ -140,5 +161,112 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      radial-gradient(rgba(139, 0, 0, 0.025) 1px, transparent 1px);
+    background-size: 24px 24px, 64px 64px;
+    background-position: 0 0, 12px 12px;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+
+  .font-hindi {
+    font-family: var(--font-hindi);
+  }
+}
+
+@layer utilities {
+  .text-saffron { color: var(--saffron); }
+  .bg-saffron { background-color: var(--saffron); }
+  .border-saffron { border-color: var(--saffron); }
+  .text-deep-red { color: var(--deep-red); }
+  .bg-deep-red { background-color: var(--deep-red); }
+  .bg-paper { background-color: var(--paper); }
+  .bg-cream { background-color: var(--cream); }
+  .border-rule { border-color: var(--rule); }
+
+  .paper-card {
+    background-color: var(--paper);
+    border: 1px solid var(--rule);
+    box-shadow: 0 1px 0 var(--rule), 2px 3px 0 rgba(26, 26, 26, 0.04);
+  }
+
+  .newspaper-rule {
+    border-top: 3px double var(--ink);
+  }
+
+  .stamp {
+    display: inline-block;
+    border: 3px solid var(--deep-red);
+    color: var(--deep-red);
+    padding: 4px 12px;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transform: rotate(-8deg);
+    opacity: 0.85;
+  }
+
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .fade-up {
+    animation: fadeUp 0.6s ease-out both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .btn-primary {
+    background-color: var(--ink);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    border: 1px solid var(--ink);
+    transition: background-color 0.2s, color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-primary:hover {
+    background-color: var(--saffron);
+    color: var(--ink);
+    border-color: var(--saffron);
+  }
+  .btn-outline {
+    background-color: transparent;
+    color: var(--ink);
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    border: 1px solid var(--ink);
+    transition: background-color 0.2s, color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-outline:hover {
+    background-color: var(--ink);
+    color: white;
   }
 }
