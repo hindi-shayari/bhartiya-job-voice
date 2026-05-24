@@ -75,11 +75,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Bhartiya Job Party — Voice of the Unemployed Youth" },
       { name: "description", content: "A political party for the people the system forgot to hire. 5 demands. Zero sponsors. One stubborn generation." },
       { name: "author", content: "Bhartiya Job Party" },
-      { property: "og:title", content: "Bhartiya Job Party (BJP)" },
-      { property: "og:description", content: "Voice of the unemployed youth of India." },
+      { property: "og:title", content: "Bhartiya Job Party — Voice of the Unemployed Youth" },
+      { property: "og:description", content: "A political party for the people the system forgot to hire. 5 demands. Zero sponsors. One stubborn generation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Bhartiya Job Party — Voice of the Unemployed Youth" },
+      { name: "twitter:description", content: "A political party for the people the system forgot to hire. 5 demands. Zero sponsors. One stubborn generation." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60ddf405-6ae5-41c4-a2b0-4c8fd693dbf7/id-preview-cfe00474--6ebc7bb1-97a3-4bc6-bbb4-3a6a1f618184.lovable.app-1779626932141.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60ddf405-6ae5-41c4-a2b0-4c8fd693dbf7/id-preview-cfe00474--6ebc7bb1-97a3-4bc6-bbb4-3a6a1f618184.lovable.app-1779626932141.png" },
     ],
     links: [
       {
